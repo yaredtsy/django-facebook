@@ -136,6 +136,16 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 SOCIAL_AUTH_FACEBOOK_KEY = '2211236669017023'
 SOCIAL_AUTH_FACEBOOK_SECRET = '8cc2e79bf99041255c06bea296052e88'
 
@@ -145,9 +155,7 @@ AUTHENTICATION_BACKENDS = (
     'remitance.view.CustomFacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
-SOCIAL_AUTH_FIELDS_STORED_IN_SESSION = ['state']
-SESSION_COOKIE_SECURE = False
-SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
 SIMPLE_JWT = {
 
     'AUTH_HEADER_TYPES': ('Bearer', 'JWT',),
