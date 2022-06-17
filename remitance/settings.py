@@ -185,7 +185,7 @@ DJOSER = {
     # "LOGIN_FIELD": "email",
     #     'SEND_ACTIVATION_EMAIL': False,
     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': [
-        'http://localhost:3001/',
+        'https://django-facebook-production.up.railway.app/temporary-redirect-for-testing/',
     ]
 }
 
