@@ -179,7 +179,7 @@ SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
     'fields': 'email'
 }
-SESSION_COOKIE_SECURE = False
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 # where your DJOSER settings are
 DJOSER = {
     # "LOGIN_FIELD": "email",
