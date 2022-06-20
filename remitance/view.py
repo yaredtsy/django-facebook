@@ -6,6 +6,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from social_core.backends.facebook import FacebookOAuth2
 
+from rest_framework.views import APIView
+
 
 class CustomFacebookOAuth2(FacebookOAuth2):
     REDIRECT_STATE = False
