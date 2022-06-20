@@ -50,7 +50,6 @@ class ExampleView(APIView):
         content = {
             'user': request.user,
             'email': request.user.email,
-            'firstname': request.user.first_name,
-
+            'name': request.user.name,
         }
         return Response(content)
