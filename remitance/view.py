@@ -46,8 +46,11 @@ class ExampleView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, format=None):
-        print(request.user.first_name)
+        print(request.user.email)
         content = {
-            'user': str(request.user),
+            'user': request.user,
+            'email': request.user.email,
+            'firstname': request.user.first_name,
+
         }
         return Response(content)
