@@ -48,8 +48,8 @@ class ExampleView(APIView):
     def get(self, request, format=None):
         print(request.user.email)
         content = {
-            'user': request.user,
-            'email': request.user.email,
+            'user': str(request.user),
+            'email': str(request.user.email),
 
         }
         return Response(content)
