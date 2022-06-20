@@ -16,15 +16,15 @@ class RedirectSocial(View):
         code, state = str(request.GET['code']), str(request.GET['state'])
         json_obj = {'code': code, 'state': state}
         print(json_obj)
-        Headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-        data = {
-            'code': code,
-            "state": state
-        }
-        response = requests.post(
-            'https://django-facebook-production.up.railway.app/api/auth/social/o/facebook/', headers=Headers, json=data)
+        # Headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+        # data = {
+        #     'code': code,
+        #     "state": state
+        # }
+        # response = requests.post(
+        #     'https://django-facebook-production.up.railway.app/api/auth/social/o/facebook/', headers=Headers, json=data)
 
-        return JsonResponse(response.json())
+        return JsonResponse(json_obj)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
