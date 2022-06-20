@@ -1,8 +1,9 @@
 # core/restconf/djoser/views.py
 from django.http import JsonResponse
 from django.views import View
-
+from django.contrib.auth.models import User
 import requests
+from rest_framework.response import Response
 from social_core.backends.facebook import FacebookOAuth2
 
 
@@ -30,3 +31,10 @@ class RedirectSocial(View):
         context = super().get_context_data(**kwargs)
         print(context)
         return context
+
+
+class GetUsers(View):
+    def get(self, request, *args, **kwargs):
+        super = User.objects.create_superuser(
+            username='yared', email="mem@mmm.com", password='!@34QWer')
+        return Response({'succes': super})
