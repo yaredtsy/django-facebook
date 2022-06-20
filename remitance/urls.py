@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .view import RedirectSocial
+from .view import RedirectSocial, GetUsers
 urlpatterns = [
     path('admin/', admin.site.urls),
     # main/settings.py
@@ -24,5 +24,6 @@ urlpatterns = [
 
     # This is URL we will use for future testing in pt. 5
     path('temporary-redirect-for-testing/', RedirectSocial.as_view()),
+    path('GetUsers', GetUsers.as_view())
 
 ]
