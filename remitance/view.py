@@ -2,7 +2,7 @@
 from django.http import JsonResponse
 from django.views import View
 from django.contrib.auth.models import User
-import requests
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from social_core.backends.facebook import FacebookOAuth2
 
@@ -36,5 +36,16 @@ class RedirectSocial(View):
 class GetUsers(View):
     def get(self, request, *args, **kwargs):
         super = User.objects.create_superuser(
-            username='yared', email="mem@mmm.com", password='!@34QWer')
+            username='yareds', email="mem@mmm.com", password='!@34QWer')
         return Response({'succes': super})
+
+
+class ExampleView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        print(request.user)
+        content = {
+            'user': str(request.user),
+        }
+        return Response(content)

@@ -144,7 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '2211236669017023'
 SOCIAL_AUTH_FACEBOOK_SECRET = '8cc2e79bf99041255c06bea296052e88'
-
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
 AUTHENTICATION_BACKENDS = (
     # Important for accessing admin with django_social
     # 'social_core.backends.google.GoogleOAuth2',
